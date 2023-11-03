@@ -1,0 +1,29 @@
+
+
+.create-test-form{
+    width: 900px;
+
+    max-width: 80vw;
+    min-width: 300px;
+}
+
+.add-button{
+    padding: 3px 10px;
+    width: auto;
+
+    border-radius: 20px;
+}
+
+.add-question-button{
+    width: auto;
+
+    padding: 8px 35px;
+}
+
+ul{
+    /*margin-bottom: 50px;*/
+}
+
+li{
+    /*margin-left: 25px;*/
+}

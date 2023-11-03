@@ -1,0 +1,98 @@
+.title{
+    font-size: 50px;
+    font-weight: 900;
+
+    margin: 30px;
+}
+
+.about-us{
+    font-size: 25px;
+    text-align: justify;
+}
+
+.start-button{
+    margin: 50px auto;
+    width: 300px;
+    height: 50px;
+
+    box-shadow: 0 0 35px var(--light-color);
+}
+
+.earth-image-div{
+    width: 100%;
+    height: 300px;
+}
+.earth-image{
+    position: relative;
+    width: 100%;
+    z-index: -5;
+
+    animation: rotate 15s linear infinite;
+}
+
+hr{
+    width: 100vw;
+    background-color: var(--color-3)
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.substrate{
+    background-color: var(--color-3);
+    border-radius: 0px;
+    width: 100vw;
+    height: 1000px;
+
+    background: linear-gradient(90deg, var(--gradient-color-1) 0%, var(--gradient-color-2) 100%);
+    opacity: 1;
+}
+
+.substrate *{
+    color: var(--background-color-1);
+}
+
+.substrate h1{
+    font-size: 3em;
+}
+
+.blocks{
+    width: 98%;
+    justify-content: center;
+}
+
+.block{
+    width: 31%;
+    height: 300px;
+    min-width: 250px;
+    margin: 10px 1%;
+    border-radius: 20px;
+
+    padding: 10px 0;
+
+    background-color: var(--background-color-1);
+}
+
+.block h1{
+    color: var(--color-1);
+    font-size: 2em;
+}
+
+.block p{
+    color: var(--color-1);
+    font-size: 1.5em;
+    text-align: center;
+
+    margin: 15px;
+}
+
+.icon{
+    height: 25%;
+    width: auto;
+}

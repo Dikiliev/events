@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head  %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/create_test.css' %}">
+{% endblock %}
+
+
+{% block content  %}
+
+<div class="enter-5"></div>
+<div class="container">
+    <h1>Добавление теста</h1>
+
+    <form id="form" class="create-test-form" action="" method="post">
+        {% csrf_token %}
+
+        <div class="input-group">
+            <label >Название теста:</label>
+            <input id="test_name" type="text" name="test-name" placeholder="Введите название теста..." value="" required>
+        </div>
+
+        <br>
+
+        <ul id="questions">
+
+        </ul>
+
+        <button onclick="add_question()" class="add-question-button gradient-button"><a>Добавить вопрос</a></button>
+
+        <br> <br> <hr> <br>
+        <button type="submit" class="gradient-button"><a>Сохранить тест</a></button>
+
+    </form>
+</div>
+
+<script type="text/javascript" src="{% static 'js/create_test.js' %}">
+</script>
+
+{% endblock %}
+
+

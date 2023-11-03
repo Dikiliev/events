@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head  %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+
+{% block content  %}
+
+<main>
+    <div class="title">
+        <span class="text-logo-part-1"></span><span class="text-logo-part-2">Welcome</span>
+    </div>
+
+    <div class="about-us" id="about-us">
+        <script>get_text("{% static 'textes/home_about_us.html' %}", "about-us")</script>
+    </div>
+
+    <br>
+
+    <button class="start-button gradient-button" type="submit"><a>Начать</a></button>
+
+    <div class="earth-image-div">
+        <img class="earth-image" src="{% static 'images/earth.png' %}" alt="">
+    </div>
+
+    <div class="container substrate">
+        <br>
+        <h1>Особенности</h1>
+        <br>
+        <div class="blocks horizontal-container">
+            <div class="block container">
+                <h1>Геймфикация</h1>
+                <img class="icon" src="{% static 'images/add-icon.svg' %}" alt="">
+                <p>Наш проект предусматривает кучу возможностей которые вам нахер не нужны.</p>
+            </div>
+            <div class="block">
+
+            </div>
+            <div class="block">
+
+            </div>
+        </div>
+    </div>
+
+    <div></div>
+</main>
+
+{% endblock %}
+
+
