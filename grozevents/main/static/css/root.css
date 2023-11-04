@@ -9,19 +9,19 @@
 
     --color-1: #24292d;
     --color-2: #2B3137;
-    --color-3: #2fbb4f;
+    --color-3: #626EF0;
 
-    --hover-color-1: #2fbb4f;
+    --hover-color-1: #7d88f1;
 
-    --gradient-color-1: #2fbb4f;
-    --gradient-color-2: #0d74e7;
+    --gradient-color-1: #626EF0;
+    --gradient-color-2: #5e5adc;
 
-    --gradient-hover-color-1: #0d74e7;
-    --gradient-hover-color-2: #2fbb4f;
+    --gradient-hover-color-1: #640de7;
+    --gradient-hover-color-2: #626EF0;
 
     --error-color: #D80032;
 
-    --light-color: rgba(1, 195, 141, 0.25);
+    --light-color: rgba(26, 49, 194, 0.25);
 
     --shadow: rgba(0, 0, 0, 0.1);
     --shadow-blur: 15px;

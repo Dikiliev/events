@@ -14,6 +14,11 @@ def home(request: HttpRequest):
     return render(request, 'index.html', data)
 
 
+def events(request: HttpRequest):
+    data = create_base_data('Мероприятия')
+    return render(request, 'events.html', data)
+
+
 def register(request: HttpRequest):
     data = create_base_data('Регистрация')
 

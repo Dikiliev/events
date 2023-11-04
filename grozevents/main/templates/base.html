@@ -18,11 +18,12 @@
 <div class="head">
     <div class="head-content horizontal-container">
         <div class="logo">
-<!--            <span class="text-logo-part-1">Quest</span><span class="text-logo-part-2">Map</span>-->
-            <img class="logo-icon" src="{% static 'images/logo.svg' %}">
+            <span class="text-logo-part-1">Soc</span><span class="text-logo-part-2">Leader</span>
+<!--            <img class="logo-icon" src="{% static 'images/logo.svg' %}">-->
         </div>
         <nav class="nav-menu horizontal-container">
             <a href="/" class="nav-item">Главная</a>
+            <a href="/events" class="nav-item">Мероприятия</a>
             <a href="#" class="nav-item">О нас</a>
 
             {% if user.is_authenticated %}
@@ -31,8 +32,8 @@
 
             {% else %}
 
-            <a href="/login" class="nav-item">Войти</a>
-            <a href="/register" class="nav-item">Зарегистрироваться</a>
+            <a href="/login" class="nav-item button border" >Войти</a>
+            <a href="/register" class="nav-item button">Зарегистрироваться</a>
 
             {% endif %}
         </nav>

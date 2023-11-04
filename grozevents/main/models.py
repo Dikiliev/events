@@ -1,6 +1,6 @@
 from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.models import AbstractUser
-from django.db.models import Model, TextField, BooleanField, IntegerField, JSONField, ImageField
+from django.db.models import Model, TextField, CharField, BooleanField, IntegerField, JSONField, ImageField, DateTimeField
 
 
 class User(AbstractUser):
@@ -24,3 +24,18 @@ class User(AbstractUser):
 
     def exist(self):
         return len(User.objects.filter(username=self.username)) > 0
+
+
+class Event(Model):
+    creater_id = IntegerField()
+    category_id = IntegerField()
+
+    title = CharField(max_length=255)
+    description = TextField()
+    start_date = DateTimeField()
+
+    date_created = DateTimeField(auto_now_add=True)
+
+
+class EventCategory(Model):
+    title = CharField(max_length=255)
