@@ -39,3 +39,6 @@ class Event(Model):
 
 class EventCategory(Model):
     title = CharField(max_length=255)
+
+    def __str__(self):
+        return self.title

@@ -203,11 +203,55 @@ form{
     color: var(--color-1);
 }
 
+.input-group span{
+    margin-top: 5px;
+    color: var(--color-3);
+}
+
 form a{
     margin-top: 20px;
     display: block;
     width: 100%;
     text-align: center;
+}
+
+.button-lite{
+    position: relative;
+    padding: 5px 10px;
+    outline:none;
+
+    background: transparent;
+    color: var(--color-3);
+
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    border-radius: calc(var(--base-border-radius) / 2);
+    border: 1px solid var(--color-3);
+}
+.button-lite.active{
+    background: var(--color-3);
+    color: var(--background-color-1);
+}
+
+.cut{
+    color: var(--color-3);
+    margin: 0 10px;
+}
+
+.search input{
+    position: relative;
+    padding: 5px 10px;
+    outline:none;
+
+    font-size: 14px;
+    background: transparent;
+
+    color: var(--color-3);
+
+    border-radius: calc(var(--base-border-radius) / 2);
+    border: 1px solid var(--color-3);
 }
 
 .gradient-button{
@@ -224,6 +268,7 @@ form a{
     border-radius: calc(var(--base-border-radius) / 2);
     border: none;
 }
+
 .gradient-button a{
     margin: 0;
     color: var(--background-color-1);

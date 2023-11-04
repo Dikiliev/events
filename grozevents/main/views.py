@@ -2,7 +2,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render, redirect
 
-from .models import User
+from .models import User, Event, EventCategory
 
 import json
 
@@ -16,7 +16,15 @@ def home(request: HttpRequest):
 
 def events(request: HttpRequest):
     data = create_base_data('Мероприятия')
+    data['events'] = EventCategory.objects.all()
+
     return render(request, 'events.html', data)
+
+
+def create_event(request: HttpRequest):
+    data = create_base_data('Новое мероприятие')
+
+    return render(request, 'create_event.html', data)
 
 
 def register(request: HttpRequest):

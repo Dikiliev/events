@@ -3,15 +3,47 @@
 {% load static %}
 
 {% block head  %}
-<link type="text/css" rel="stylesheet" href="{% static 'css/home.css' %}">
+<link type="text/css" rel="stylesheet" href="{% static 'css/events.css' %}">
 {% endblock %}
 
 
 {% block content  %}
 
 <main>
+    <section class="search-section horizontal-container">
 
+        <div class="search-section-items">
+            <button id="filter-button" class="button-lite">Фильтр по категории</button>
+            <div id="category-menu" class="category-menu hidden">
+                <div id="category-menu-ul" class="category-menu-ul">
+
+                    {% for event in events %}
+
+                    <button class="category-menu-item">{{ event }}</button>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+        <span class="cut">|</span>
+        <button class="search-section-items button-lite active">Сначала новые</button>
+        <button class="search-section-items button-lite">Сначала наступающие</button>
+        <span class="cut">|</span>
+
+        <div class="search search-section-items">
+            <input type="text" id="search-input" placeholder="Поиск...">
+        </div>
+
+    </section>
+
+    <section class="events-section">
+
+    </section>
 </main>
+
+<script type="text/javascript" src="{% static 'js/events.js' %}"></script>
 
 {% endblock %}
 

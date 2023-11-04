@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head  %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/create_event.css' %}">
+<script type="text/javascript" src="{% static 'js/create_event.js' %}"></script>
+{% endblock %}
+
+
+{% block content  %}
+
+<div class="enter-5"></div>
+<div class="container">
+    <h1>Добавление мероприятия</h1>
+
+    <form id="form" class="create-test-form" action="" method="post">
+        {% csrf_token %}
+
+        <div class="input-group">
+            <label>Название:</label>
+            <input id="name" type="text" name="name" placeholder="Введите название..." value="" required>
+        </div>
+
+        <div id="file-input-div" class="file-input" >
+            <label for="fileInput" class="file-input-button">
+                <img class="add-icon" src="{% static 'images/add-icon.svg' %}">
+                <br>
+                Добавить фото
+            </label>
+            <input onchange="upload_photo()" type="file" id="fileInput" accept="image/*" style="display: none;">
+        </div>
+
+        <img id="image" class="image hidden">
+
+
+        <div class="input-group">
+            <label>Описание:</label>
+            <input id="description" type="text" name="description" placeholder="Введите описание..." value="" required>
+        </div>
+
+        <div class="input-group">
+            <label>Место проведения:</label>
+            <input id="address" type="text" name="address" placeholder="Введите адрес..." value="" required>
+        </div>
+
+        <div class="input-group">
+            <label>Дата начала:</label>
+            <input id="start-date" type="date" name="start-date" value="" required>
+        </div>
+
+        <div class="input-group">
+            <label>Дата конца:</label>
+            <input id="end-date" type="date" name="end-date" value="" required>
+        </div>
+
+        <div class="input-group">
+            <label>Стоимость посещения:</label>
+            <input id="price" type="number" name="price" placeholder="Введите стоимость в рублях..." value="" required>
+            <span>* оставьте поле пустым, если посещение бесплатное</span>
+        </div>
+
+        <br>
+
+        <br> <br> <hr> <br>
+        <button type="submit" class="gradient-button"><a>Добавить мероприятие</a></button>
+
+    </form>
+</div>
+
+<script type="text/javascript">
+    start()
+</script>
+
+{% endblock %}
+
+
