@@ -61,6 +61,9 @@ def create_event(request: HttpRequest):
         event.end_date = post.get('end_date', '')
         event.price = post.get('price', 0)
 
+        if not event.price:
+            event.price = 0
+
         uploaded_image = request.FILES.get('image_file', None)
         event.image.save(uploaded_image.name, uploaded_image)
 
