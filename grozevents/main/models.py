@@ -11,12 +11,12 @@ locale.setlocale(locale.LC_TIME, 'ru_RU')
 class User(AbstractUser):
 
     class Role:
-        student = 0
-        teacher = 1
+        visitor = 0
+        organizer = 1
         admin = 100
 
-    role = IntegerField(default=Role.student)
-    avatar = ImageField()
+    role = IntegerField(default=Role.visitor)
+    avatar = ImageField(blank=True)
 
     def __str__(self):
         return self.username

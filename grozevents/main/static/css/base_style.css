@@ -185,7 +185,7 @@ form{
     flex-direction: column;
     margin: 20px auto;
 }
-.input-group input, .input-group select{
+.input-group input, .input-group select, .input-group textarea{
     outline: none;
     color: var(--color-1);
     border-radius: calc(var(--base-border-radius) / 2);
@@ -203,6 +203,13 @@ form{
 .input-group label:first-child{
     margin: 7px 0;
     color: var(--color-1);
+}
+
+.textarea{
+    display: inline-flex;
+    height: 200px;
+    vertical-align: top;
+    text-align: start;
 }
 
 option{

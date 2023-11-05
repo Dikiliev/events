@@ -24,11 +24,14 @@
         <nav class="nav-menu horizontal-container">
             <a href="/" class="nav-item">Главная</a>
             <a href="/events" class="nav-item">Мероприятия</a>
-            <a href="#" class="nav-item">О нас</a>
+
+            {% if user.role != 0 %}
+            <a href="/create_event" class="nav-item">Организовать</a>
+            {% endif %}
 
             {% if user.is_authenticated %}
 
-            <a href="/logout" class="nav-item">{{ user.username }}</a>
+            <a href="/logout" class="nav-item">Выйти ({{ user.username }})</a>
 
             {% else %}
 
