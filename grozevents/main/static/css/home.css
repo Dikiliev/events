@@ -87,7 +87,8 @@ hr{
 }
 
 .block img{
-    width: 100px
+    width: 100px;
+    margin: 15px auto;
 }
 
 .block h1{
@@ -100,7 +101,7 @@ hr{
 .block p{
     color: var(--color-1);
     font-size: 1.5em;
-    text-align: justify;
+    text-align: center;
 
     margin: 15px;
 }
