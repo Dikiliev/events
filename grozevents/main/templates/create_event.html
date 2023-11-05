@@ -14,12 +14,12 @@
 <div class="container">
     <h1>Добавление мероприятия</h1>
 
-    <form id="form" class="create-test-form" action="" method="post">
+    <form id="form" class="create-test-form" action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="input-group">
             <label>Название:</label>
-            <input id="name" type="text" name="name" placeholder="Введите название..." value="" required>
+            <input id="title" type="text" name="title" placeholder="Введите название..." value="" required>
         </div>
 
         <div id="file-input-div" class="file-input" >
@@ -28,11 +28,19 @@
                 <br>
                 Добавить фото
             </label>
-            <input onchange="upload_photo()" type="file" id="fileInput" accept="image/*" style="display: none;">
+            <input onchange="upload_photo()" type="file" name="image_file" id="fileInput" accept="image/*" style="display: none;" required>
         </div>
 
-        <img id="image" class="image hidden">
+        <img id="image-show" class="image hidden">
 
+        <div class="input-group">
+            <label for="category">Категория:</label>
+            <select name="category" id="category" required>
+                {% for category in categories %}
+                <option value="{{ category }}">{{ category }}</option>
+                {% endfor %}
+            </select>
+        </div>
 
         <div class="input-group">
             <label>Описание:</label>
@@ -46,17 +54,17 @@
 
         <div class="input-group">
             <label>Дата начала:</label>
-            <input id="start-date" type="date" name="start-date" value="" required>
+            <input id="start-date" type="date" name="start_date" value="" required>
         </div>
 
         <div class="input-group">
             <label>Дата конца:</label>
-            <input id="end-date" type="date" name="end-date" value="" required>
+            <input id="end-date" type="date" name="end_date" value="" required>
         </div>
 
         <div class="input-group">
             <label>Стоимость посещения:</label>
-            <input id="price" type="number" name="price" placeholder="Введите стоимость в рублях..." value="" required>
+            <input id="price" type="number" name="price" placeholder="Введите стоимость в рублях..." value="">
             <span>* оставьте поле пустым, если посещение бесплатное</span>
         </div>
 

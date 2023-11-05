@@ -16,13 +16,59 @@ def home(request: HttpRequest):
 
 def events(request: HttpRequest):
     data = create_base_data('Мероприятия')
-    data['events'] = EventCategory.objects.all()
+
+    data['categories'] = EventCategory.objects.all()
+
+    _events = Event.objects.all()
+    categories = [event.get_category_title() for event in _events]
+    periods = [event.get_date_period() for event in _events]
+
+    data['events'] = [{'this': _events[i], 'category': categories[i], 'period': periods[i]} for i in range(len(_events))]
 
     return render(request, 'events.html', data)
 
 
+def event(request: HttpRequest, _id: int):
+    data = create_base_data('Мероприятие')
+
+    try:
+        event = Event.objects.get(id=_id)
+
+        data['event'] = event
+        data['category'] = event.get_category_title()
+        data['period'] = event.get_date_period()
+
+    except Exception as e:
+        return 'Not Found 404'
+
+    return render(request, 'event.html', data)
+
+
 def create_event(request: HttpRequest):
     data = create_base_data('Новое мероприятие')
+
+    if request.method == 'POST':
+        post = request.POST
+
+        event = Event()
+        event.creater_id = request.user.id
+        event.category_id = EventCategory.objects.get(title=post.get('category')).id
+
+        event.title = post.get('title', '')
+        event.description = post.get('description', '')
+        event.address = post.get('address', '')
+        event.start_date = post.get('start_date', '')
+        event.end_date = post.get('end_date', '')
+        event.price = post.get('price', 0)
+
+        uploaded_image = request.FILES.get('image_file', None)
+        event.image.save(uploaded_image.name, uploaded_image)
+
+        event.save()
+
+        return redirect('events')
+
+    data['categories'] = EventCategory.objects.all()
 
     return render(request, 'create_event.html', data)
 

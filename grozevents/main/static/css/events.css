@@ -6,10 +6,14 @@ section{
     flex-wrap: nowrap;
 }
 
+.events-section{
+    align-items: flex-start;
+    justify-content: flex-start
+}
+
 .search-section-items{
     margin: 5px;
 }
-
 
 .category-menu {
     position: absolute;
@@ -73,4 +77,56 @@ section{
 .search input{
     width: 100%;
     margin-right: 5px;
+}
+
+hr{
+    color: var(--color-3);
+    border: 1px solid var(--color-3);
+    background-color: var(--color-3);
+}
+
+.event{
+    align-items: flex-start;
+    width:360px;
+    height: 500px;
+
+    margin: 10px;
+
+    border: 2px solid var(--color-3);
+    border-radius: var(--base-border-radius);
+
+    background-color: var(--background-color-1);
+    overflow: hidden;
+}
+
+.image-div{
+    width: 100%;
+    height: 75%;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.event img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+.event:hover img{
+    transform: scale(1.1);
+    transition: transform 1s ease;
+}
+
+.event h1{
+    margin: 3px 15px;
+    color: var(--color-1)
+}
+
+.event p{
+    color: var(--color-3);
+    margin: 3px 15px;
+}
+
+.event .price{
+    font-size: 21px;
 }

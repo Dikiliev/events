@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block head  %}
+<link type="text/css" rel="stylesheet" href="{% static 'css/event.css' %}">
+{% endblock %}
+
+
+{% block content  %}
+
+<main class="main-event">
+    <div class="section">
+        <img class="image" src="{{ event.image.url }}" alt="">
+    </div>
+
+    <div class="section">
+        <h1> {{ event.title }} </h1>
+        <p>{{ event.description }}</p>
+        <label style="text-transform: uppercase" class="category">#{{ category }}</label>
+        <br><br>
+        <label class="category">📅&nbsp;&nbsp;{{ period }}</label>
+
+        <br><br>
+        {% if event.price|default:0 > 0 %}
+        <h1>Цена: {{ event.price }}₽</h1>
+        {% else %}
+        <h1>Посещение свободное</h1>
+        {% endif %}
+    </div>
+</main>
+
+{% endblock %}
+
+

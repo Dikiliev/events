@@ -1,0 +1,39 @@
+
+.main-event{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.section{
+    width: 48%;
+    min-width: 500px;
+}
+
+.image{
+    width: 100%;
+    min-height: 500px;
+    object-fit: cover;
+
+    border-radius: var(--base-border-radius);
+}
+
+.category{
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--color-3);
+
+    border: 1px solid var(--color-3);
+    border-radius: var(--base-border-radius);
+    width: auto;
+
+    padding: 5px 15px;
+}
+
+p{
+    margin: 15px 0;
+    font-size: 18px;
+    text-align: justify;
+}

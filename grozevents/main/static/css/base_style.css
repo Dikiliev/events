@@ -53,6 +53,8 @@ hr{
     color: var(--background-color-2);
     background-color: var(--background-color-2);
     height: 1px;
+
+    width: 100%;
 }
 
 a:hover{
@@ -183,7 +185,7 @@ form{
     flex-direction: column;
     margin: 20px auto;
 }
-.input-group input{
+.input-group input, .input-group select{
     outline: none;
     color: var(--color-1);
     border-radius: calc(var(--base-border-radius) / 2);
@@ -201,6 +203,10 @@ form{
 .input-group label:first-child{
     margin: 7px 0;
     color: var(--color-1);
+}
+
+option{
+    color: var(--color-3)
 }
 
 .input-group span{

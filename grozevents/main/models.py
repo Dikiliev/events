@@ -2,6 +2,11 @@ from django.contrib.auth.hashers import make_password, check_password
 from django.contrib.auth.models import AbstractUser
 from django.db.models import Model, TextField, CharField, BooleanField, IntegerField, JSONField, ImageField, DateTimeField
 
+import locale
+
+
+locale.setlocale(locale.LC_TIME, 'ru_RU')
+
 
 class User(AbstractUser):
 
@@ -32,9 +37,19 @@ class Event(Model):
 
     title = CharField(max_length=255)
     description = TextField()
+    address = TextField()
+    image = ImageField(upload_to='images/')
     start_date = DateTimeField()
+    end_date = DateTimeField()
+    price = IntegerField()
 
     date_created = DateTimeField(auto_now_add=True)
+
+    def get_category_title(self):
+        return EventCategory.objects.get(id=self.category_id).title
+
+    def get_date_period(self):
+        return f'{self.start_date.strftime("%d %b")} - {self.end_date.strftime("%d %b")}'
 
 
 class EventCategory(Model):

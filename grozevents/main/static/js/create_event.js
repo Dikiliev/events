@@ -3,7 +3,7 @@
 function start(){
     const fileInput = document.getElementById('fileInput');
     const fileInputDiv = document.getElementById('file-input-div');
-    const image = document.getElementById('image');
+    const image = document.getElementById('image-show');
 
     fileInput.addEventListener('change', function (event) {
         const file = event.target.files[0];

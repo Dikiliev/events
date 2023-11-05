@@ -17,9 +17,9 @@
             <div id="category-menu" class="category-menu hidden">
                 <div id="category-menu-ul" class="category-menu-ul">
 
-                    {% for event in events %}
+                    {% for category in categories %}
 
-                    <button class="category-menu-item">{{ event }}</button>
+                    <button class="category-menu-item" style="text-transform: capitalize">{{ category }}</button>
 
                     {% endfor %}
 
@@ -37,8 +37,30 @@
         </div>
 
     </section>
+    <br><hr><br>
+    <section class="events-section horizontal-container">
 
-    <section class="events-section">
+        {% for event in events %}
+
+        <a style="text-decoration: none" href="/event/{{ event.this.id }}" class="event container">
+            <div class="image-div">
+                <img src="{{ event.this.image.url }}">
+            </div>
+
+            <h1>{{ event.this.title }}</h1>
+            <p style="text-transform: uppercase; font-weight: 600">{{ event.category }}</p>
+            <p>{{ event.period }}</p>
+            <h1 class="price">
+                {% if event.this.price|default:0 > 0 %}
+                {{ event.this.price }} руб.
+                {% else %}
+                Посещение свободное
+                {% endif %}
+            </h1>
+        </a>
+
+
+        {% endfor %}
 
     </section>
 </main>

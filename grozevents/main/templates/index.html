@@ -20,7 +20,11 @@
 
     <br>
 
-    <button class="start-button gradient-button" type="submit"><a>Начать</a></button>
+    {% if user.is_authenticated %}
+    <button class="start-button gradient-button" type="submit"><a href="events/">Начать</a></button>
+    {% else %}
+    <button class="start-button gradient-button" type="submit"><a href="register/">Начать</a></button>
+    {% endif %}
 
     <div class="earth-image-div">
         <img class="earth-image" src="{% static 'images/earth.png' %}" alt="">
@@ -29,18 +33,22 @@
     <div class="container substrate">
         <br>
         <h1>Особенности</h1>
-        <br>
+        <br><br><br>
         <div class="blocks horizontal-container">
             <div class="block container">
-                <h1>Геймфикация</h1>
+                <h1>Создание и редактирование мероприятий</h1>
                 <img class="icon" src="{% static 'images/add-icon.svg' %}" alt="">
-                <p>Наш проект предусматривает кучу возможностей которые вам нахер не нужны.</p>
+                <p>На платформе сервиса для размещения мероприятий организаторы могут создавать страницы для своих событий, включая описания, изображения, даты, местоположение и цены.</p>
             </div>
-            <div class="block">
-
+            <div class="block container">
+                <h1>Регистрация и продажа билетов</h1>
+                <img class="icon" src="{% static 'images/add-icon.svg' %}" alt="">
+                <p>Сервис позволяет организаторам продавать билеты онлайн, а участникам - легко зарегистрироваться и оплатить участие через интернет.</p>
             </div>
-            <div class="block">
-
+            <div class="block container">
+                <h1>Продвижение ваших мероприятий</h1>
+                <img class="icon" src="{% static 'images/add-icon.svg' %}" alt="">
+                <p>Платформа предоставляет инструменты для продвижения мероприятий через социальные сети, рассылки, рекламу и другие маркетинговые каналы.</p>
             </div>
         </div>
     </div>

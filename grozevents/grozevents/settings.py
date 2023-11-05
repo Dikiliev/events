@@ -106,7 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
+
+TIME_ZONE = 'Europe/Moscow'
 
 TIME_ZONE = 'UTC'
 
@@ -128,6 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
+
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Движок сеансов (может быть 'db', 'cache' и другие)
 SESSION_COOKIE_AGE = 1209600  # Время жизни сеанса в секундах
